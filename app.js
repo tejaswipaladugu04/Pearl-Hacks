@@ -60,11 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
             dashboardContent.appendChild(entryDiv);
         });
 
-        // Add button for showing all check-ins
-        const showAllButton = document.createElement('button');
-        showAllButton.textContent = "Show All Check-ins";
-        showAllButton.onclick = showAllCheckIns;
-        dashboardContent.appendChild(showAllButton);
 
         // Add button for creating a new check-in
         const newCheckInButton = document.createElement('button');
@@ -152,11 +147,11 @@ document.addEventListener('DOMContentLoaded', function () {
             allCheckInsContent.appendChild(entryDiv);
         });
 
-        // Add button for going back to check-in page
-        const backToCheckInButton = document.createElement('button');
-        backToCheckInButton.textContent = "Back to Check-in";
-        backToCheckInButton.onclick = showCheckInForm;
-        allCheckInsContent.appendChild(backToCheckInButton);
+        // Add button for showing all check-ins
+        const showAllButton = document.createElement('button');
+        showAllButton.textContent = "Show All Check-ins";
+        showAllButton.onclick = showAllCheckIns;
+        dashboardContent.appendChild(showAllButton);
     }
 
     // Initial display
