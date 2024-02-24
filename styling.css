@@ -2,11 +2,12 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #7BAFD4; /* UNC Chapel Hill Blue */
+    background-color: #f2f2f2;
+    color: #333;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
@@ -15,15 +16,7 @@ body {
 }
 
 #checkInForm, #dashboard {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-h1, h2 {
-    color: #7BAFD4; /* UNC Chapel Hill Blue */
+    text-align: center;
 }
 
 button {
@@ -34,15 +27,21 @@ button {
     cursor: pointer;
 }
 
-#dashboard {
-    display: none;
+label, input, textarea {
+    display: block;
+    margin: 10px 0;
 }
 
-#chartContainer {
+textarea {
+    width: 100%;
+    height: 80px;
+    resize: vertical;
+}
+
+#dashboardContent, #wellnessTips, #communitySupport, #otherDashboardData {
     margin-top: 20px;
 }
 
-#wellnessTips, #resourcesNearby, #communitySupport {
-    margin-top: 20px;
-    color: #333;
+h2 {
+    color: #007BFF;
 }
