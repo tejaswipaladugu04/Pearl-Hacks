@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dashboardContent.appendChild(entryDiv);
         });
 
+
         // Add button for creating a new check-in
         const newCheckInButton = document.createElement('button');
         newCheckInButton.textContent = "New Check-in";
@@ -87,12 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Clear the form for new check-in
         clearCheckInForm();
-
-        // Add button for showing all check-ins
-        const showAllButton = document.createElement('button');
-        showAllButton.textContent = "Show All Check-ins";
-        showAllButton.onclick = showAllCheckIns;
-        checkInForm.appendChild(showAllButton);
     }
 
     // Function to clear the Check-in Form
@@ -138,12 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Display all check-ins on the page
         allCheckInsContent.innerHTML = "<h3>All Check-ins:</h3>";
 
-        if (!showAllButton) {
-            showAllButton = document.createElement('button');
-            showAllButton.textContent = "Show All Check-ins";
-            showAllButton.onclick = showAllCheckIns;
-            dashboardContent.appendChild(showAllButton);
-
         allCheckInData.forEach(entry => {
             const entryDiv = document.createElement('div');
             entryDiv.innerHTML = `
@@ -158,11 +147,11 @@ document.addEventListener('DOMContentLoaded', function () {
             allCheckInsContent.appendChild(entryDiv);
         });
 
-        // Add button for going back to check-in page
-        const backToCheckInButton = document.createElement('button');
-        backToCheckInButton.textContent = "Back to Check-in";
-        backToCheckInButton.onclick = showCheckInForm;
-        allCheckInsContent.appendChild(backToCheckInButton);
+        // Add button for showing all check-ins
+        const showAllButton = document.createElement('button');
+        showAllButton.textContent = "Show All Check-ins";
+        showAllButton.onclick = showAllCheckIns;
+        dashboardContent.appendChild(showAllButton);
     }
 
     // Initial display
