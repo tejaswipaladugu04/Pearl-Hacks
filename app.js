@@ -90,6 +90,18 @@ document.addEventListener('DOMContentLoaded', function () {
         checkInForm.style.display = 'block';
         dashboard.style.display = 'none';
         allCheckInsContent.style.display = 'none';
+
+        // Clear the form for new check-in
+        clearCheckInForm();
+    }
+
+    // Function to clear the Check-in Form
+    function clearCheckInForm() {
+        document.getElementById('mood').value = '';
+        document.getElementById('stressLevel').value = '';
+        document.getElementById('happinessLevel').value = '';
+        document.getElementById('positiveNote').value = '';
+        document.getElementById('negativeNote').value = '';
     }
 
     // Fetch other dashboard data
@@ -117,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
     }
 
-    // Function to display all check-ins
+    // New function to display all check-ins
     function showAllCheckIns() {
         checkInForm.style.display = 'none';
         dashboard.style.display = 'none';
@@ -148,7 +160,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Initial display
-    checkInForm.style.display = 'block';
-    dashboard.style.display = 'none';
-    allCheckInsContent.style.display = 'none';
+    showCheckInForm();
 });
