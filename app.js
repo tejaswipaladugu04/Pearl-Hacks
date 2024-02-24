@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Store all check-in data
     const allCheckInData = [];
 
+    // Current check-in data
+    let checkInData = [];
+
     // Check-in function
     window.submitCheckIn = function () {
         const mood = document.getElementById('mood').value;
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Update the dashboard with check-in data
-    function updateDashboard(checkInData) {
+    function updateDashboard() {
         // Display check-in data on the dashboard
         dashboardContent.innerHTML = "<h3>Recent Check-ins:</h3>";
 
@@ -64,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dashboard.style.display = 'block';
 
         // Update the dashboard with check-in data
-        updateDashboard(checkInData);
+        updateDashboard();
 
         // Fetch and display other dashboard data (mood trends, etc.)
         fetchOtherDashboardData();
@@ -131,3 +134,4 @@ document.addEventListener('DOMContentLoaded', function () {
     dashboard.style.display = 'none';
     allCheckInsContent.style.display = 'none';
 });
+
