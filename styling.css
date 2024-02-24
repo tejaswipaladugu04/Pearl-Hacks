@@ -2,14 +2,14 @@ body {
     font-family: 'Copperplate', Fantasy;
     margin: 0;
     padding: 0;
-    background-color: #EDDDDA;
-    color: #333;
+    background-color: #F2ECEA;
+    color: #244244;
 }
 
 .container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #FDFFB6;
+    background-color: #EDDDDA;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@ body {
 
 button {
     padding: 10px;
-    background-color: #244244;
+    background-color: #F2ECEA;
     color: #333;
     border: none;
     cursor: pointer;
@@ -40,11 +40,11 @@ textarea {
 
 #dashboardContent, #wellnessTips, #communitySupport, #otherDashboardData {
     margin-top: 20px;
-    background-color: #FAE6E7;
+    background-color: #EDDDDA;
     padding: 10px;
     border-radius: 8px;
 }
 
 h2 {
-    color: #007BFF;
+    color: #DC559A;
 }
