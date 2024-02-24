@@ -1,0 +1,43 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#checkInForm {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#dashboard {
+    display: none;
+}
+
+h2 {
+    color: #007BFF;
+}
+
+#chartContainer {
+    margin-top: 20px;
+}
+
+#wellnessTips, #communitySupport {
+    margin-top: 20px;
+}
