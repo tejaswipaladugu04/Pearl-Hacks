@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Store all check-in data
     const allCheckInData = [];
 
-    // Current check-in data
+    // Store current check-in data
     let checkInData = [];
 
     // Check-in function
@@ -59,6 +59,18 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
             dashboardContent.appendChild(entryDiv);
         });
+
+        // Add button for showing all check-ins
+        const showAllButton = document.createElement('button');
+        showAllButton.textContent = "Show All Check-ins";
+        showAllButton.onclick = showAllCheckIns;
+        dashboardContent.appendChild(showAllButton);
+
+        // Add button for creating a new check-in
+        const newCheckInButton = document.createElement('button');
+        newCheckInButton.textContent = "New Check-in";
+        newCheckInButton.onclick = showCheckInForm;
+        dashboardContent.appendChild(newCheckInButton);
     }
 
     // Show dashboard
@@ -71,6 +83,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Fetch and display other dashboard data (mood trends, etc.)
         fetchOtherDashboardData();
+    }
+
+    // Function to show the Check-in Form
+    function showCheckInForm() {
+        checkInForm.style.display = 'block';
+        dashboard.style.display = 'none';
+        allCheckInsContent.style.display = 'none';
     }
 
     // Fetch other dashboard data
@@ -98,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
     }
 
-    // New function to display all check-ins
+    // Function to display all check-ins
     function showAllCheckIns() {
         checkInForm.style.display = 'none';
         dashboard.style.display = 'none';
@@ -120,18 +139,16 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
             allCheckInsContent.appendChild(entryDiv);
         });
-    }
 
-    // New function to go back to check-in page
-    window.goToCheckInPage = function () {
-        checkInForm.style.display = 'block';
-        dashboard.style.display = 'none';
-        allCheckInsContent.style.display = 'none';
-    };
+        // Add button for going back to check-in page
+        const backToCheckInButton = document.createElement('button');
+        backToCheckInButton.textContent = "Back to Check-in";
+        backToCheckInButton.onclick = showCheckInForm;
+        allCheckInsContent.appendChild(backToCheckInButton);
+    }
 
     // Initial display
     checkInForm.style.display = 'block';
     dashboard.style.display = 'none';
     allCheckInsContent.style.display = 'none';
 });
-
