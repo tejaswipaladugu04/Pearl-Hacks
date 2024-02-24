@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const resourcesNearby = document.getElementById('resourcesNearby');
     const communitySupport = document.getElementById('communitySupport');
 
+    // Store check-in data
+    const checkInData = [];
+
     // Check-in function
     window.submitCheckIn = function () {
         const mood = document.getElementById('mood').value;
@@ -17,23 +20,62 @@ document.addEventListener('DOMContentLoaded', function () {
         const positiveNote = document.getElementById('positiveNote').value;
         const negativeNote = document.getElementById('negativeNote').value;
 
-        // Add logic to store check-in data and update the dashboard
+        // Create a check-in object
+        const checkInEntry = {
+            mood,
+            stressLevel,
+            happinessLevel,
+            positiveNote,
+            negativeNote,
+            timestamp: new Date().toLocaleString() // Timestamp for simplicity
+        };
 
-        // For now, let's just display a message
-        alert("Check-in successful!");
+        // Add the entry to the check-in data
+        checkInData.push(checkInEntry);
 
         // Show dashboard
         showDashboard();
     };
+
+    // Update the dashboard with check-in data
+    function updateDashboard() {
+        // Display check-in data on the dashboard
+        const dashboardContent = document.getElementById('dashboardContent');
+        dashboardContent.innerHTML = "<h3>Recent Check-ins:</h3>";
+
+        checkInData.forEach(entry => {
+            const entryDiv = document.createElement('div');
+            entryDiv.innerHTML = `
+                <p><strong>Mood:</strong> ${entry.mood}</p>
+                <p><strong>Stress Level:</strong> ${entry.stressLevel}</p>
+                <p><strong>Happiness Level:</strong> ${entry.happinessLevel}</p>
+                <p><strong>Positive Note:</strong> ${entry.positiveNote}</p>
+                <p><strong>Negative Note:</strong> ${entry.negativeNote}</p>
+                <p><strong>Timestamp:</strong> ${entry.timestamp}</p>
+                <hr>
+            `;
+            dashboardContent.appendChild(entryDiv);
+        });
+    }
 
     // Show dashboard
     function showDashboard() {
         checkInForm.style.display = 'none';
         dashboard.style.display = 'block';
 
-        // Add logic to fetch and display dashboard data (mood trends, etc.)
+        // Update the dashboard with check-in data
+        updateDashboard();
+
+        // Fetch and display other dashboard data (mood trends, etc.)
+        fetchOtherDashboardData();
+    }
+
+    // Fetch other dashboard data
+    function fetchOtherDashboardData() {
+        // Add logic to fetch and display additional dashboard data
         // For now, let's just display a message
-        chartContainer.innerHTML = "<p>Dashboard data will be displayed here.</p>";
+        document.getElementById('otherDashboardData').innerHTML = "<p>Other dashboard data will be displayed here.</p>";
+    
 
         // Fetch wellness tips and community support
         fetchWellnessTips();
