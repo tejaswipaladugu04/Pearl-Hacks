@@ -21,7 +21,7 @@ body {
 
 button {
     padding: 10px;
-    background-color: #D1DBE4;
+    background-color: #E6CAC7;
     color: #244244;
     border: none;
     cursor: pointer;
@@ -46,5 +46,5 @@ textarea {
 }
 
 h2 {
-    color: #FDAC68;
+    color: #F29B72;
 }
