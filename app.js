@@ -122,36 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add logic to fetch and display community support
         // For now, let's just display a message
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
-    }
 
-    // New function to display all check-ins
-    function showAllCheckIns() {
-        checkInForm.style.display = 'none';
-        dashboard.style.display = 'none';
-        allCheckInsContent.style.display = 'block';
-
-        // Display all check-ins on the page
-        allCheckInsContent.innerHTML = "<h3>All Check-ins:</h3>";
-
-        allCheckInData.forEach(entry => {
-            const entryDiv = document.createElement('div');
-            entryDiv.innerHTML = `
-                <p><strong>Mood:</strong> ${entry.mood}</p>
-                <p><strong>Stress Level:</strong> ${entry.stressLevel}</p>
-                <p><strong>Happiness Level:</strong> ${entry.happinessLevel}</p>
-                <p><strong>Positive Note:</strong> ${entry.positiveNote}</p>
-                <p><strong>Negative Note:</strong> ${entry.negativeNote}</p>
-                <p><strong>Timestamp:</strong> ${entry.timestamp}</p>
-                <hr>
-            `;
-            allCheckInsContent.appendChild(entryDiv);
-        });
-
-        // Add button for showing all check-ins
-        const showAllButton = document.createElement('button');
-        showAllButton.textContent = "Show All Check-ins";
-        showAllButton.onclick = showAllCheckIns;
-        dashboardContent.appendChild(showAllButton);
     }
 
     // Initial display
