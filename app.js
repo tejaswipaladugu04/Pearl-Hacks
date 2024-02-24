@@ -1,12 +1,9 @@
-let map;
-
 document.addEventListener('DOMContentLoaded', function () {
     // Elements
     const checkInForm = document.getElementById('checkInForm');
     const dashboard = document.getElementById('dashboard');
-    const chartContainer = document.getElementById('chartContainer');
+    const dashboardContent = document.getElementById('dashboardContent');
     const wellnessTips = document.getElementById('wellnessTips');
-    const resourcesNearby = document.getElementById('resourcesNearby');
     const communitySupport = document.getElementById('communitySupport');
 
     // Store check-in data
@@ -40,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update the dashboard with check-in data
     function updateDashboard() {
         // Display check-in data on the dashboard
-        const dashboardContent = document.getElementById('dashboardContent');
         dashboardContent.innerHTML = "<h3>Recent Check-ins:</h3>";
 
         checkInData.forEach(entry => {
@@ -75,15 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add logic to fetch and display additional dashboard data
         // For now, let's just display a message
         document.getElementById('otherDashboardData').innerHTML = "<p>Other dashboard data will be displayed here.</p>";
-    
 
         // Fetch wellness tips and community support
         fetchWellnessTips();
         fetchCommunitySupport();
-
-        // Initialize Google Maps for nearby resources
-        initMap();
-        fetchNearbyResources();
     }
 
     // Fetch wellness tips
@@ -98,20 +89,5 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add logic to fetch and display community support
         // For now, let's just display a message
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
-    }
-
-    // Initialize Google Maps
-    window.initMap = function () {
-        map = new google.maps.Map(document.getElementById('resourcesNearby'), {
-            center: { lat: 35.9049, lng: -79.0469 }, // UNC Chapel Hill Coordinates
-            zoom: 14,
-        });
-    };
-
-    // Fetch nearby resources using Google Maps Places API
-    function fetchNearbyResources() {
-        // Add logic to fetch and display nearby resources
-        // For now, let's just display a message
-        resourcesNearby.innerHTML = "<p>Nearby resources will be displayed here.</p>";
     }
 });
