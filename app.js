@@ -138,6 +138,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Display all check-ins on the page
         allCheckInsContent.innerHTML = "<h3>All Check-ins:</h3>";
 
+        if (!showAllButton) {
+            showAllButton = document.createElement('button');
+            showAllButton.textContent = "Show All Check-ins";
+            showAllButton.onclick = showAllCheckIns;
+            dashboardContent.appendChild(showAllButton);
+
         allCheckInData.forEach(entry => {
             const entryDiv = document.createElement('div');
             entryDiv.innerHTML = `
