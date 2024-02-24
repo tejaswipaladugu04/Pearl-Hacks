@@ -2,7 +2,7 @@ body {
     font-family: 'Copperplate', Fantasy;
     margin: 0;
     padding: 0;
-    background-color: #E4F1EE;
+    background-color: #EDDDDA;
     color: #333;
 }
 
@@ -21,7 +21,7 @@ body {
 
 button {
     padding: 10px;
-    background-color: #FCF1EF;
+    background-color: #244244;
     color: #333;
     border: none;
     cursor: pointer;
