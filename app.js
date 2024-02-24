@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
             dashboardContent.appendChild(entryDiv);
         });
 
-
         // Add button for creating a new check-in
         const newCheckInButton = document.createElement('button');
         newCheckInButton.textContent = "New Check-in";
@@ -72,6 +71,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function showDashboard() {
         checkInForm.style.display = 'none';
         dashboard.style.display = 'block';
+
+        // Clear the form for new check-in
+        clearCheckInForm();
 
         // Update the dashboard with check-in data
         updateDashboard();
@@ -85,9 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
         checkInForm.style.display = 'block';
         dashboard.style.display = 'none';
         allCheckInsContent.style.display = 'none';
-
-        // Clear the form for new check-in
-        clearCheckInForm();
     }
 
     // Function to clear the Check-in Form
@@ -122,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add logic to fetch and display community support
         // For now, let's just display a message
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
-
     }
 
     // Initial display
