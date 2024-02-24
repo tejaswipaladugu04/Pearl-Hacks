@@ -1,52 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styling.css">
     <title>Mental Wellness Check-in</title>
+    <link rel="stylesheet" href="your-stylesheet.css"> <!-- Replace with the actual filename of your CSS file -->
+    <style>
+        /* Add your additional styling here */
+        /* ... */
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <div id="checkInForm">
-            <h2>Check-in Form</h2>
-            <label for="mood">How are you feeling today?</label>
-            <select id="mood" required>
-                <option value="happy">😊 Happy</option>
-                <option value="neutral">😐 Neutral</option>
-                <option value="sad">😢 Sad</option>
-            </select>
+    <div class="container" id="checkInForm">
+        <h2>How are you feeling today?</h2>
+        <!-- Your survey form goes here, include the necessary inputs and elements -->
 
-            <label for="stressLevel">Stress Level (1-10):</label>
-            <input type="number" id="stressLevel" min="1" max="10" required>
-
-            <label for="happinessLevel">How happy are you feeling? (1-10):</label>
-            <input type="number" id="happinessLevel" min="1" max="10" required>
-
-            <label for="positiveNote">Write something positive about your day:</label>
-            <textarea id="positiveNote"></textarea>
-
-            <label for="negativeNote">Write something negative (if any):</label>
-            <textarea id="negativeNote"></textarea>
-
-            <button onclick="submitCheckIn()">Check-in</button>
-        </div>
-
-        <div id="dashboard" style="display: none;">
-            <h2>Dashboard</h2>
-            <div id="dashboardContent"></div>
-            <div id="wellnessTips"></div>
-            <div id="communitySupport"></div>
-            <div id="otherDashboardData"></div>
-        </div>
-
-        <div id="allCheckIns" style="display: none;">
-            <h2>All Check-ins</h2>
-            <div id="allCheckInsContent"></div>
-            <button onclick="goToCheckInPage()">Go Back to Check-in</button>
-        </div>
+        <button onclick="submitCheckIn()">Submit Check-in</button>
     </div>
 
-    <script src="app.js"></script>
+    <div class="container" id="dashboard">
+        <div id="dashboardContent"></div>
+        <div id="otherDashboardData"></div>
+        <div id="wellnessTips"></div>
+        <div id="communitySupport"></div>
+
+        <button onclick="showAllCheckIns()">Show All Check-ins</button>
+    </div>
+
+    <!-- All Check-ins Page -->
+    <div class="container" id="allCheckInsContent"></div>
+
+    <script src="your-javascript-file.js"></script> <!-- Replace with the actual filename of your JavaScript file -->
 </body>
+
 </html>
