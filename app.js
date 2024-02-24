@@ -11,11 +11,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const mood = document.getElementById('mood').value;
         const stressLevel = document.getElementById('stressLevel').value;
         const selfCareActivities = document.getElementById('selfCareActivities').value;
+        const sleepHours = document.getElementById('sleepHours').value;
+        const exerciseMinutes = document.getElementById('exerciseMinutes').value;
+        const gratitudeEntry = document.getElementById('gratitudeEntry').value;
 
         // Add logic to store check-in data and update the dashboard
 
         // For now, let's just display a message
         alert("Check-in successful!");
+        showDashboard();
     };
 
     // Show dashboard
