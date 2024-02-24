@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const dashboardContent = document.getElementById('dashboardContent');
     const wellnessTips = document.getElementById('wellnessTips');
     const communitySupport = document.getElementById('communitySupport');
+    const allCheckInsContent = document.getElementById('allCheckInsContent'); // New element
 
+    // Store all check-in data
     const allCheckInData = [];
 
     // Check-in function
@@ -37,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Update the dashboard with check-in data
-    function updateDashboard() {
+    function updateDashboard(checkInData) {
         // Display check-in data on the dashboard
         dashboardContent.innerHTML = "<h3>Recent Check-ins:</h3>";
 
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dashboard.style.display = 'block';
 
         // Update the dashboard with check-in data
-        updateDashboard();
+        updateDashboard(checkInData);
 
         // Fetch and display other dashboard data (mood trends, etc.)
         fetchOtherDashboardData();
@@ -97,10 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function showAllCheckIns() {
         checkInForm.style.display = 'none';
         dashboard.style.display = 'none';
-        allCheckIns.style.display = 'block';
+        allCheckInsContent.style.display = 'block';
 
         // Display all check-ins on the page
-        const allCheckInsContent = document.getElementById('allCheckInsContent');
         allCheckInsContent.innerHTML = "<h3>All Check-ins:</h3>";
 
         allCheckInData.forEach(entry => {
@@ -122,63 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
     window.goToCheckInPage = function () {
         checkInForm.style.display = 'block';
         dashboard.style.display = 'none';
-        allCheckIns.style.display = 'none';
+        allCheckInsContent.style.display = 'none';
     };
 
-    // Update the dashboard with check-in data
-    function updateDashboard() {
-        // Display check-in data on the dashboard
-        dashboardContent.innerHTML = "<h3>Recent Check-ins:</h3>";
-
-        checkInData.forEach(entry => {
-            const entryDiv = document.createElement('div');
-            entryDiv.innerHTML = `
-                <p><strong>Mood:</strong> ${entry.mood}</p>
-                <p><strong>Stress Level:</strong> ${entry.stressLevel}</p>
-                <p><strong>Happiness Level:</strong> ${entry.happinessLevel}</p>
-                <p><strong>Positive Note:</strong> ${entry.positiveNote}</p>
-                <p><strong>Negative Note:</strong> ${entry.negativeNote}</p>
-                <p><strong>Timestamp:</strong> ${entry.timestamp}</p>
-                <hr>
-            `;
-            dashboardContent.appendChild(entryDiv);
-        });
-    }
-
-    // Show dashboard
-    function showDashboard() {
-        checkInForm.style.display = 'none';
-        dashboard.style.display = 'block';
-
-        // Update the dashboard with check-in data
-        updateDashboard();
-
-        // Fetch and display other dashboard data (mood trends, etc.)
-        fetchOtherDashboardData();
-    }
-
-    // Fetch other dashboard data
-    function fetchOtherDashboardData() {
-        // Add logic to fetch and display additional dashboard data
-        // For now, let's just display a message
-        document.getElementById('otherDashboardData').innerHTML = "<p>Other dashboard data will be displayed here.</p>";
-
-        // Fetch wellness tips and community support
-        fetchWellnessTips();
-        fetchCommunitySupport();
-    }
-
-    // Fetch wellness tips
-    function fetchWellnessTips() {
-        // Add logic to fetch and display wellness tips
-        // For now, let's just display a message
-        wellnessTips.innerHTML = "<p>Wellness tips will be displayed here.</p>";
-    }
-
-    // Fetch community support
-    function fetchCommunitySupport() {
-        // Add logic to fetch and display community support
-        // For now, let's just display a message
-        communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
-    }
+    // Initial display
+    checkInForm.style.display = 'block';
+    dashboard.style.display = 'none';
+    allCheckInsContent.style.display = 'none';
 });
