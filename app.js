@@ -128,6 +128,8 @@ document.addEventListener('DOMContentLoaded', function () {
             moodDisplay.innerHTML = "We’re glad that you’re excited! Whatever you are looking forward to, take a moment to celebrate, and channel that energy into trying a new hobby, talk to someone new, or go outside for a run.";
         } else if (document.getElementById('mood').value == "neutral"){
             moodDisplay.innerHTML = "Not a lot going on at the moment? Take a moment to organize your to-do list, finish something you have been putting off, and keep up with your self-care.";
+        } else {
+            moodDisplay.innerHTML = "no feelings";
         }
 
 
