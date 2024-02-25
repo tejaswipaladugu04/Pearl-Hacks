@@ -29,6 +29,7 @@ button {
     color: #244244;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
 label, input, textarea {
@@ -63,4 +64,5 @@ a {
     color: #244244;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
