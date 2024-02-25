@@ -115,7 +115,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // For now, let's just display a message
         wellnessTips.innerHTML = "<p>Wellness tips will be displayed here.</p>";
         
-        fetch("/process")
+        fetch("/process", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ stressLevel: "your_input_text_here" }) // Replace with actual input text
+        })
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Error: ${response.status} - ${response.statusText}`);
@@ -124,11 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(data => {
             if (data.result) {
-                wellnessTips.innerHTML = "<p>Wellness Tips:</p><ul>";
-                data.result.forEach(tip => {
-                    wellnessTips.innerHTML += `<li>${tip}</li>`;
-                });
-                wellnessTips.innerHTML += "</ul>";
+                wellnessTips.innerHTML = `<p>${data.result}</p>`;
             } else {
                 wellnessTips.innerHTML = "<p>No wellness tips available at the moment.</p>";
             }
@@ -144,8 +146,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add logic to fetch and display community support
         // For now, let's just display a message
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
-        fetch('/process')
-        communitySupport.innerHTML = response.json()
+        //fetch('/process')
+        //response.json()
 
     }
 
