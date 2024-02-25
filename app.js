@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ stressLevel: "your_input_text_here" }) // Replace with actual input text
+            body: JSON.stringify({ stressLevel: "1" }) // Replace with actual input text
         })
         .then(response => {
             if (!response.ok) {
@@ -146,8 +146,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add logic to fetch and display community support
         // For now, let's just display a message
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
-        //fetch('/process')
-        //response.json()
+        fetch('/process')
+        communitySupport.innerHTML = response.json()
 
     }
 
