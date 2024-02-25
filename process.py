@@ -7,7 +7,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/process', methods=['POST'])
-def process():
+def processText():
     data = request.get_json()
     input_text = data['stressLevel']
 
