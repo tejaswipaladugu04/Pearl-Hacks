@@ -118,8 +118,16 @@ document.addEventListener('DOMContentLoaded', function () {
         
         var moodDisplay = document.getElementById("mood");
 
-        if (document.getElementById("mood").value == "happy"){
-            moodDisplay.innerHTML = "We’re happy that you’re happy! Use this mood as a chance to spread positivity by performing a random act of kindness today. Receivers of a random act of kindness tend to appreciate it more than the giver realizes, and are likely to pay it forward."
+        if (document.getElementById('mood').value == "happy"){
+            moodDisplay.innerHTML = "We’re happy that you’re happy! Use this mood as a chance to spread positivity by performing a random act of kindness today. Receivers of a random act of kindness tend to appreciate it more than the giver realizes, and are likely to pay it forward.";
+        } else if (document.getElementById('mood').value == "sad"){
+            moodDisplay.innerHTML = "It is ok to be sad. Take a break, give yourself space, and talk to someone. Try activities that can help you process your feelings in a healthy way, such as journaling, meditation, or taking a warm shower.";
+        } else if (document.getElementById('mood').value == "anxious"){
+            moodDisplay.innerHTML = "Take a deep breath. Focus on what you can control, and find ways to stay grounded. Try square breathing, listening to comforting music, or talking to someone who can comfort you.";
+        } else if (document.getElementById('mood').value == "excited"){
+            moodDisplay.innerHTML = "We’re glad that you’re excited! Whatever you are looking forward to, take a moment to celebrate, and channel that energy into trying a new hobby, talk to someone new, or go outside for a run.";
+        } else if (document.getElementById('mood').value == "neutral"){
+            moodDisplay.innerHTML = "Not a lot going on at the moment? Take a moment to organize your to-do list, finish something you have been putting off, and keep up with your self-care.";
         }
 
 
@@ -130,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (document.getElementById('stressLevel').value <=7) {
             stressLevelDisplay.innerHTML = "Your stress level is moderate. Try clearing your mind by clearing your space, breaking down tasks into baby steps, and setting boundaries to limit additional stress.";
         } else {
-            stressLevelDisplay.innerHTML = "Your stress level is high. Take it easy if you can, talk to someone, and engage in something that makes you happy. Remember to take deep breaths, baby steps, think positive affirmations. Also, feel free to vent in the notes - this is a safe space!"
+            stressLevelDisplay.innerHTML = "Your stress level is high. Take it easy if you can, talk to someone, and engage in something that makes you happy. Remember to take deep breaths, baby steps, think positive affirmations. Also, feel free to vent in the notes - this is a safe space!";
         }
 
     }
