@@ -48,3 +48,11 @@ textarea {
 h2 {
     color: #F29B72;
 }
+
+a {
+    padding: 10px;
+    background-color: #E6CAC7;
+    color: #244244;
+    border: none;
+    cursor: pointer;
+}
