@@ -118,38 +118,11 @@ document.addEventListener('DOMContentLoaded', function () {
         var stressLevelDisplay = document.getElementById("stressLevelDisplay");
 
         if (entry.stressLevel === 1) {
-            stressLevelDisplay.innerText = "No stress";
+            stressLevelDisplay.innerHTML = "No stress";
         } else {
-            stressLevelDisplay.innerText = "lots of stress";
+            stressLevelDisplay.innerHTML = "lots of stress";
         }
 
-
-
-
-        fetch("/process", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ stressLevel: entry.stressLevel }) // Replace with actual input text
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error: ${response.status} - ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.result) {
-                wellnessTips.innerHTML = `<p>${data.result}</p>`;
-            } else {
-                wellnessTips.innerHTML = "<p>No wellness tips available at the moment.</p>";
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching wellness tips:', error);
-            wellnessTips.innerHTML = `<p>Error fetching wellness tips: ${error.message}</p>`;
-        });
     }
 
     // Fetch community support
@@ -157,8 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add logic to fetch and display community support
         // For now, let's just display a message
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
-        fetch('/process')
-        communitySupport.innerHTML = response.json()
 
     }
 
