@@ -18,3 +18,10 @@
             color: #666;
         }
     </style>
+    a {
+        padding: 10px;
+        background-color: #E6CAC7;
+        color: #244244;
+        border: none;
+        cursor: pointer;
+    }
