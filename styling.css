@@ -49,6 +49,10 @@ textarea {
     border-radius: 8px;
 }
 
+h1 {
+    text-align: center;
+}
+
 h2 {
     color: #F29B72;
 }
