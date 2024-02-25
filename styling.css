@@ -17,6 +17,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     align-items: center;
+    text-align: center;
 }
 
 #checkInForm, #dashboard {
@@ -48,6 +49,10 @@ textarea {
     background-color: #F2EEED;
     padding: 10px;
     border-radius: 8px;
+}
+
+li {
+    text-align: center;
 }
 
 h1 {
