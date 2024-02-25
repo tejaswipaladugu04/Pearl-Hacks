@@ -114,14 +114,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function fetchWellnessTips() {
         // Add logic to fetch and display wellness tips
         // For now, let's just display a message
-        wellnessTips.innerHTML = "<p>Wellness tips will be displayed here.</p>";
+        wellnessTips.innerHTML = "<p>Wellness tips</p>";
         
         var stressLevelDisplay = document.getElementById("stressLevelDisplay");
 
-        if (document.getElementById('stressLevel').value == 1) {
-            stressLevelDisplay.innerHTML = "No stress";
+        if (document.getElementById('stressLevel').value <= 4) {
+            stressLevelDisplay.innerHTML = "Your stress level is low! This is great, as a little stress can be beneficial for daily motivation. Make sure to keep up with your tasks for the day, take a leisurely walk, and watch something that will make you laugh.";
+        } else if (document.getElementById('stressLevel').value <=7) {
+            stressLevelDisplay.innerHTML = "Your stress level is moderate. Try clearing your mind by clearing your space, breaking down tasks into baby steps, and setting boundaries to limit additional stress.";
         } else {
-            stressLevelDisplay.innerHTML = document.getElementById('stressLevel').value;
+            stressLevelDisplay.innerHTML = "Your stress level is high. Take it easy if you can, talk to someone, and engage in something that makes you happy. Remember to take deep breaths, baby steps, think positive affirmations. Also, feel free to vent in the notes - this is a safe space!"
         }
 
     }
