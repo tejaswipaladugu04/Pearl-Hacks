@@ -114,6 +114,30 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add logic to fetch and display wellness tips
         // For now, let's just display a message
         wellnessTips.innerHTML = "<p>Wellness tips will be displayed here.</p>";
+        fetch("/process")
+        .then(response => {
+            // Check if the response status is OK (200)
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status}`);
+            }
+            return response.json(); // Assuming the server returns JSON
+        })
+        .then(data => {
+            // Assuming the server response has a 'result' property
+            if (data.result) {
+                wellnessTips.innerHTML = "<p>Wellness Tips:</p><ul>";
+                data.result.forEach(tip => {
+                    wellnessTips.innerHTML += `<li>${tip}</li>`;
+                });
+                wellnessTips.innerHTML += "</ul>";
+            } else {
+                wellnessTips.innerHTML = "<p>No wellness tips available at the moment.</p>";
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching wellness tips:', error);
+            wellnessTips.innerHTML = "<p>Error fetching wellness tips. Please try again later.</p>";
+        });
     }
 
     // Fetch community support
