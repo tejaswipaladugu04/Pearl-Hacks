@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function fetchOtherDashboardData() {
         // Add logic to fetch and display additional dashboard data
         // For now, let's just display a message
-        document.getElementById('otherDashboardData').innerHTML = "<p>Other dashboard data will be displayed here.</p>";
+        document.getElementById('otherDashboardData').innerHTML = "<p>Your Dashboard Data</p>";
 
         // Fetch wellness tips and community support
         fetchWellnessTips();
