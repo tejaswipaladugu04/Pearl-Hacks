@@ -5,6 +5,9 @@ body {
     background-color: #BCD4D0;
     color: #244244;
 }
+.center {
+    text-align: center;
+    }
 
 .container {
     max-width: 600px;
