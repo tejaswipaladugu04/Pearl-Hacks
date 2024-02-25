@@ -1,27 +1,31 @@
 <style>
-        body {
-            font-family: 'Copperplate', Fantasy;
-            margin: 0;
-            padding: 0;
-            background-color: #BCD4D0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            line-height: 1.6;
-            color: #666;
-        }
-    </style>
+    body {
+        font-family: 'Copperplate', Fantasy;
+        margin: 0;
+        padding: 0;
+        background-color: #BCD4D0;
+        color: #244244; /* Text color */
+    }
+    .container {
+        width: 600px; /* Adjusted width for better readability */
+        margin: 50px auto; /* Center the container horizontally */
+        background-color: #F2EEED; /* Container background color */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #F29B72; /* Heading color */
+    }
+    p {
+        line-height: 1.6;
+        color: #666;
+    }
     a {
         padding: 10px;
-        background-color: #E6CAC7;
-        color: #244244;
+        background-color: #E6CAC7; /* Link background color */
+        color: #244244; /* Link text color */
         border: none;
         cursor: pointer;
     }
+</style>
