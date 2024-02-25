@@ -41,24 +41,6 @@
         </div>
     </div>
 
-    <script>
-        function processText() {
-            var inputText = document.getElementById("inputText").value;
-
-            // Use AJAX to send the input text to the server
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/process", true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // Update the result on the webpage
-                    document.getElementById("result").innerText = xhr.responseText;
-                }
-            };
-            xhr.send(JSON.stringify({ stressLevel: stressLevel }));
-        }
-    </script>
-
     <div class="container" id="dashboard" style="display: none;">
         <h2>Dashboard</h2>
         <div id="chartContainer"></div>
