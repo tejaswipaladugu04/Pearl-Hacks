@@ -115,6 +115,17 @@ document.addEventListener('DOMContentLoaded', function () {
         // For now, let's just display a message
         wellnessTips.innerHTML = "<p>Wellness tips will be displayed here.</p>";
         
+        var stressLevelDisplay = document.getElementById("stressLevelDisplay");
+
+        if (entry.stressLevel === 1) {
+            stressLevelDisplay.innerText = "No stress";
+        } else {
+            stressLevelDisplay.innerText = "lots of stress";
+        }
+
+
+
+
         fetch("/process", {
             method: 'POST',
             headers: {
