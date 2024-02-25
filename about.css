@@ -29,4 +29,7 @@
         border: none;
         cursor: pointer;
     }
+    button {
+        text-align: center;
+    }
 </style>
