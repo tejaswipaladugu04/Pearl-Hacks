@@ -72,14 +72,15 @@ document.addEventListener('DOMContentLoaded', function () {
         checkInForm.style.display = 'none';
         dashboard.style.display = 'block';
 
-        // Clear the form for new check-in
-        clearCheckInForm();
-
         // Update the dashboard with check-in data
         updateDashboard();
 
         // Fetch and display other dashboard data (mood trends, etc.)
         fetchOtherDashboardData();
+
+        // Clear the form for new check-in
+        clearCheckInForm();
+        
     }
 
     // Function to show the Check-in Form
@@ -120,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (checkInData[1] == 1) {
             stressLevelDisplay.innerHTML = "No stress";
         } else {
-            stressLevelDisplay.innerHTML = allCheckInData;
+            stressLevelDisplay.innerHTML = document.getElementById('stressLevel').value;
         }
 
     }
