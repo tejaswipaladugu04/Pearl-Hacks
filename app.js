@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function fetchCommunitySupport() {
         // Add logic to fetch and display community support
         // For now, let's just display a message
-        communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
+        communitySupport.innerHTML = "<p>Support Near You</p>";
 
     }
 
