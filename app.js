@@ -123,22 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
     }
 
-    function processText() {
-        const inputText = document.getElementById('stressLevel').value;
-
-        // Use AJAX to send the input text to the server
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/process', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                // Update the result on the webpage
-                document.getElementById('result').innerText = JSON.parse(xhr.responseText).result;
-            }
-        };
-        xhr.send(JSON.stringify({ stressLevel: inputText }));
-    }
-
     // Initial display
     showCheckInForm();
 });
