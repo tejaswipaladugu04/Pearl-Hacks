@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         var stressLevelDisplay = document.getElementById("stressLevelDisplay");
 
-        if (checkInData[1] == 1) {
+        if (document.getElementById('stressLevel').value == 1) {
             stressLevelDisplay.innerHTML = "No stress";
         } else {
             stressLevelDisplay.innerHTML = document.getElementById('stressLevel').value;
