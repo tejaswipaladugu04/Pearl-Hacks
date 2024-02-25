@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (checkInData[1] == 1) {
             stressLevelDisplay.innerHTML = "No stress";
         } else {
-            stressLevelDisplay.innerHTML = "lots of stress";
+            stressLevelDisplay.innerHTML = checkInData[1];
         }
 
     }
