@@ -147,12 +147,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    const stressChart = createLineChart('stressChart', 'Stress Levels', 'rgba(255, 99, 132, 0.7)');
-    const happinessChart = createLineChart('happinessChart', 'Happiness Levels', 'rgba(75, 192, 192, 0.7)');
+    const chartContainer = document.createElement('div');
+    chartContainer.id = 'chartContainer';
+    dashboard.appendChild(chartContainer);
+
+    const stressChart = createLineChart(chartContainer, 'stressChart', 'Stress Levels', 'rgba(255, 99, 132, 0.7)');
+    const happinessChart = createLineChart(chartContainer, 'happinessChart', 'Happiness Levels', 'rgba(75, 192, 192, 0.7)');
 
     // Function to create a line chart
     function createLineChart(chartId, label, color) {
-        const ctx = document.getElementById(chartId).getContext('2d');
+        const ctx = document.createElement('canvas');
+        ctx.id = chartId;
+        chartContainer.appendChild(ctx);
         return new Chart(ctx, {
             type: 'line',
             data: {
