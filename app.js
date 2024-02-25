@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         var moodDisplay = document.getElementById("mood");
 
-        if (moodDisplay.value == 'happy'){
+        if (document.getElementById("mood").value == "happy"){
             moodDisplay.innerHTML = "We’re happy that you’re happy! Use this mood as a chance to spread positivity by performing a random act of kindness today. Receivers of a random act of kindness tend to appreciate it more than the giver realizes, and are likely to pay it forward."
         }
 
