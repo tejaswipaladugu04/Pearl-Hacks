@@ -23,6 +23,7 @@
     }
     a {
         padding: 10px;
+        text-align: center;
         background-color: #E6CAC7; /* Link background color */
         color: #244244; /* Link text color */
         border: none;
