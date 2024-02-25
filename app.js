@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ stressLevel: "1" }) // Replace with actual input text
+            body: JSON.stringify({ stressLevel: stressLevel }) // Replace with actual input text
         })
         .then(response => {
             if (!response.ok) {
