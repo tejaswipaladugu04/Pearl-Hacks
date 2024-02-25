@@ -5,11 +5,6 @@ body {
     background-color: #BCD4D0;
     color: #244244;
 }
-<div class="flex-container">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-</div>
 
 .container {
     max-width: 600px;
