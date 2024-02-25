@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add logic to fetch and display community support
         // For now, let's just display a message
         communitySupport.innerHTML = "<p>Community support will be displayed here.</p>";
+        fetch('/process')
     }
 
     // Initial display
