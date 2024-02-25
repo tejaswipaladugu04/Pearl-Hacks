@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Fetch wellness tips and community support
         fetchWellnessTips();
-
         updateLineCharts();
         fetchCommunitySupport();
     }
