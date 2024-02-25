@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const wellnessTips = document.getElementById('wellnessTips');
     const communitySupport = document.getElementById('communitySupport');
     const allCheckInsContent = document.getElementById('allCheckInsContent'); // New element
-    const chartingLevels = document.getElementById('chartingLevels');
 
     // Store all check-in data
     const allCheckInData = [];
