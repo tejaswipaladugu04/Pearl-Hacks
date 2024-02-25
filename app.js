@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const wellnessTips = document.getElementById('wellnessTips');
     const communitySupport = document.getElementById('communitySupport');
     const allCheckInsContent = document.getElementById('allCheckInsContent'); // New element
+    const chartingLevels = document.getElementById('chartingLevels');
 
     // Store all check-in data
     const allCheckInData = [];
@@ -143,6 +144,39 @@ document.addEventListener('DOMContentLoaded', function () {
             stressLevelDisplay.innerHTML = "Your stress level is high. Take it easy if you can, talk to someone, and engage in something that makes you happy. Remember to take deep breaths, baby steps, think positive affirmations. Also, feel free to vent in the notes - this is a safe space!";
         }
 
+    }
+
+    const stressChart = createLineChart('stressChart', 'Stress Levels', 'rgba(255, 99, 132, 0.7)');
+    const happinessChart = createLineChart('happinessChart', 'Happiness Levels', 'rgba(75, 192, 192, 0.7)');
+
+    // Function to create a line chart
+    function createLineChart(chartId, label, color) {
+        const ctx = document.getElementById(chartId).getContext('2d');
+        return new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: label,
+                    data: [],
+                    fill: false,
+                    borderColor: color,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom'
+                    },
+                    y: {
+                        max: 10,
+                        min: 0
+                    }
+                }
+            }
+        });
     }
 
     // Fetch community support
