@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add the entry to the all check-in data
         allCheckInData.push(checkInEntry);
 
+        updateLineCharts();
+
         // Show dashboard
         showDashboard();
     };
@@ -177,6 +179,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+    }
+
+    function updateLineCharts() {
+        stressChart.data.labels = allCheckInData.map((entry, index) => index + 1);
+        stressChart.data.datasets[0].data = allCheckInData.map(entry => entry.stressLevel);
+        stressChart.update();
+
+        happinessChart.data.labels = allCheckInData.map((entry, index) => index + 1);
+        happinessChart.data.datasets[0].data = allCheckInData.map(entry => entry.happinessLevel);
+        happinessChart.update();
     }
 
     // Fetch community support
